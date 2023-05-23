@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <title>Drum kit</title>
+      <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="style">
+        <h1>Music Kit</h1>
+        <h2>Tap the button below</h2>
+    </div> 
+    <div class="visual"></div> 
+    <div class="kit">
+    <div class="a">guitar
+        <audio class="sound" src="./sounds/guiter.wav"></audio>
+    </div>
+    <div class="a">beatbox
+        <audio class="sound" src="./sounds/beatbox.mp3"></audio>
+    </div>
+    <div class="a">bassdrop
+        <audio class="sound" src="./sounds/bassdrop.mp3"></audio>
+    </div>
+    <div class="a">drop of water
+        <audio class="sound" src="./sounds/drop_of_water.mp3"></audio>
+    </div>
+    </div>
+    <script>
+        window.addEventListener("load", () =>{
+            const sounds = document.querySelectorAll(".sound");
+            const kit = document.querySelectorAll(".kit div");
+            kit.forEach((kit,index) => {
+                kit.addEventListener("click",function() {
+                    sounds[index].currenttime=0;
+                    sounds[index].play();
+                });
+            });
+        });
+    
+    </script>
+</body>
+</html>
